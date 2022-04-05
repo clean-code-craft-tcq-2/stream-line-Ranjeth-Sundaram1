@@ -42,5 +42,4 @@ def GenerateSamplesToReceiverFromA2D_12B(Samples_count):
     PrintSenderReadingsInConsole(samplesToReceiver)
     return samplesToReceiver
 
-if __name__ == "__main__":
-    GenerateSamplesToReceiverFromA2D_12B(50)
+GenerateSamplesToReceiverFromA2D_12B(50)
