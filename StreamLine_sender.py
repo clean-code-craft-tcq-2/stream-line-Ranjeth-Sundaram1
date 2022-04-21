@@ -8,6 +8,7 @@ defaultParams['max_bit_value'] = 4094
 
 def PrintSenderReadingsInConsole(DataToPrint: list):
     messageToPrint = ',\n'.join(str(one_set)for one_set in DataToPrint)
+    print (type(messageToPrint))
     print(messageToPrint)
     return(messageToPrint)
 
