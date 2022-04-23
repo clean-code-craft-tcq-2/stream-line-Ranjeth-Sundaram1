@@ -29,6 +29,11 @@ jobs:
           coverage run --branch StreamLine_sender.test.py  
           coverage html
           coverage report
+      - name: Run and collect coverage receiver
+        run: |
+          coverage run --branch receiver.py  
+          coverage html
+          coverage report
       - name: Upload coverage
         uses: actions/upload-artifact@v2
         with:
