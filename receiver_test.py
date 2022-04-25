@@ -9,5 +9,6 @@ class receiver_test(unittest.TestCase):
     
     def test_pick_sample_from_console(self):
         self.assertTrue(receiver.pick_sample_from_console([]) == "")
+        self.assertTrue(receiver.pick_sample_from_console(["{'Current': 8, 'Temp': 39}"]) == "Current\t: Min = 8\tMax = 8\tAvg = None\nTemp\t: Min = 39\tMax = 39\tAvg = None\n")
 
 unittest.main(),
