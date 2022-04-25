@@ -1,5 +1,6 @@
 import receiver
 import unittest
+import receiver_test_input
 
 class receiver_test(unittest.TestCase):
   
