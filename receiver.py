@@ -5,26 +5,11 @@ class Parameter(enum.IntEnum):
     Current = 0
     Temp = 1
     Parameter_Count = 2
-
-data = [
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-"{'Current':10, 'Temp':20}",
-]
             
 parameter_wise_metadata = []
 
 moving_window_size = 5
+whitelisted_metadata = {"minimum_value" : "Min" ,"maximum_value" : "Max","moving_avg" : "Avg"}
 def setup():
     meta_data_sample = {
                         "minimum_value"     : None,
@@ -69,14 +54,20 @@ def process_sample(sample):
     for param in range (Parameter.Parameter_Count ):
         update_extremes(parameter_wise_metadata[param], sample[(Parameter(param).name)])
         update_moving_average(parameter_wise_metadata[param], sample[(Parameter(param).name)])
+    output_to_console()
+
 
 def output_to_console():
-    print ()
+    data_to_print = ""
+    for param in range (Parameter.Parameter_Count ):
+        data_to_print += f"{Parameter(param).name}\t: "
+        for data in whitelisted_metadata:
+            data_to_print += f"{whitelisted_metadata[data]} = {parameter_wise_metadata[param][data]}\t"    
+        data_to_print += "\n"
+    print (data_to_print)
     
-setup()
-pick_sample_from_console(data)     
-print (parameter_wise_metadata[0])   
-print (parameter_wise_metadata[1])   
 
+setup()
+# pick_sample_from_console(data) 
 
 
