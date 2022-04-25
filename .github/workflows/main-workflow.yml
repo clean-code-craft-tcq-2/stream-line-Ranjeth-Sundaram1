@@ -34,6 +34,11 @@ jobs:
           coverage run --branch receiver.py  
           coverage html
           coverage report
+      - name: Run and collect coverage receiver_test
+        run: |
+          coverage run --branch receiver_test.py  
+          coverage html
+          coverage report
       - name: Upload coverage
         uses: actions/upload-artifact@v2
         with:
