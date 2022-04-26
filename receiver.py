@@ -10,18 +10,21 @@ parameter_wise_metadata = []
 
 moving_window_size = 5
 whitelisted_metadata = {"minimum_value" : "Min" ,"maximum_value" : "Max","moving_avg" : "Avg"}
-def setup():
+
+def setup(l_moving_window_size):
+    global moving_window_size 
+    moving_window_size = l_moving_window_size
+    
     meta_data_sample = {
                         "minimum_value"     : None,
                         "maximum_value"     : None ,
                         "moving_avg"        : None,
                         "moving_window"     : None,
-                        "index_of_next_item": -5,
+                        "index_of_next_item": -moving_window_size,
                         }
     for param in range (Parameter.Parameter_Count ):
         parameter_wise_metadata.append(meta_data_sample.copy())
         parameter_wise_metadata[param]["moving_window"] = [None] * moving_window_size
-
 
 def pick_sample_from_console(data_stream):
     for sample in data_stream:        
@@ -67,7 +70,7 @@ def output_to_console():
     print (data_to_print)
     
 
-setup()
+setup(5)
 # pick_sample_from_console(data) 
 
 
