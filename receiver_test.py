@@ -4,12 +4,12 @@ import receiver_test_input
 
 class receiver_test(unittest.TestCase):
     def test_update_extremes(self):
-        self.assertTrue(receiver.update_extremes(receiver_test_input.meta_data_sample1.copy(), 25) == update_extremes_expt_outcome_test1)
-        self.assertTrue(receiver.update_extremes(receiver_test_input.meta_data_sample1.copy(), 0) == update_extremes_expt_outcome_test2)
+        self.assertTrue(receiver.update_extremes(receiver_test_input.meta_data_sample1.copy(), 25) == receiver_test_input.update_extremes_expt_outcome_test1)
+        self.assertTrue(receiver.update_extremes(receiver_test_input.meta_data_sample1.copy(), 0) == receiver_test_input.update_extremes_expt_outcome_test2)
     
     def test_update_moving_average(self):
-        self.assertTrue(receiver.update_moving_average(meta_data_sample1.copy(), 2) == update_moving_average_expt_outcome_test1)
-        self.assertTrue(receiver.update_moving_average(meta_data_sample2.copy(), 5) == update_moving_average_expt_outcome_test2)
+        self.assertTrue(receiver.update_moving_average(receiver_test_input.meta_data_sample1.copy(), 2) == receiver_test_input.update_moving_average_expt_outcome_test1)
+        self.assertTrue(receiver.update_moving_average(receiver_test_input.meta_data_sample2.copy(), 5) == receiver_test_input.update_moving_average_expt_outcome_test2)
 
 #     def test_pick_sample_from_console(self):
 #         self.assertTrue(receiver.pick_sample_from_console([]) == "")
