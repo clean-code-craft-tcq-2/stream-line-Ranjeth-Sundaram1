@@ -13,7 +13,7 @@ class receiver_test(unittest.TestCase):
         
     def test_setup(self):
         self.assertTrue(receiver.setup(5) == receiver_test_input.setup_expt_outcome_test1)
-        
+# test
 
 #     def test_pick_sample_from_console(self):
 #         self.assertTrue(receiver.pick_sample_from_console([]) == "")
