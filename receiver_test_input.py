@@ -23,4 +23,4 @@ update_moving_average_expt_outcome_test2 = {'minimum_value': 10, 'maximum_value'
 
 # setup_expt_outcome_test1 = [{'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None], 'index_of_next_item': -2}, {'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None], 'index_of_next_item': -2}]
 
-setup_expt_outcome_test1 =[{'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None, None, None, None], 'index_of_next_item': -5}, {'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None, None, None, None], 'index_of_next_item': -5}]
+setup_expt_outcome_test1 = str([{'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None, None, None, None], 'index_of_next_item': -5}, {'minimum_value': None, 'maximum_value': None, 'moving_avg': None, 'moving_window': [None, None, None, None, None], 'index_of_next_item': -5}])
