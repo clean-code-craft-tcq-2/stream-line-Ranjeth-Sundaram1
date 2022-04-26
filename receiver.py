@@ -25,6 +25,7 @@ def setup(l_moving_window_size):
     for param in range (Parameter.Parameter_Count ):
         parameter_wise_metadata.append(meta_data_sample.copy())
         parameter_wise_metadata[param]["moving_window"] = [None] * moving_window_size
+    return parameter_wise_metadata
 
 def pick_sample_from_console(data_stream):
     for sample in data_stream:        
