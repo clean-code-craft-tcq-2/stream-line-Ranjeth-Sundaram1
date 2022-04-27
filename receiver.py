@@ -1,6 +1,8 @@
 import ast
 import enum
 
+data = ""
+
 class Parameter(enum.IntEnum):
     Current = 0
     Temp = 1
