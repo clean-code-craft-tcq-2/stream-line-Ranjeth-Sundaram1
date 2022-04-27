@@ -14,6 +14,8 @@ class receiver_test(unittest.TestCase):
     def test_setup(self):
         result = (receiver.setup(5))
         index = 0
+        print (result)
+        print (receiver_test_input.setup_expt_outcome_test1)
         for item in result:
             self.assertTrue(item == receiver_test_input.setup_expt_outcome_test1[index])
             index += 1
