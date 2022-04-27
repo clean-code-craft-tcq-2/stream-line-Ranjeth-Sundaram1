@@ -10,7 +10,7 @@ class Parameter(enum.IntEnum):
             
 parameter_wise_metadata = []
 
-moving_window_size = 5
+moving_window_size = None
 whitelisted_metadata = {"minimum_value" : "Min" ,"maximum_value" : "Max","moving_avg" : "Avg"}
 
 def setup(l_moving_window_size):
