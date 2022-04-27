@@ -11,9 +11,12 @@ class receiver_test(unittest.TestCase):
         self.assertTrue(receiver.update_moving_average(receiver_test_input.meta_data_sample1.copy(), 2) == receiver_test_input.update_moving_average_expt_outcome_test1)
         self.assertTrue(receiver.update_moving_average(receiver_test_input.meta_data_sample2.copy(), 5) == receiver_test_input.update_moving_average_expt_outcome_test2)
         
-#     def test_setup(self):
-#         result = str(receiver.setup(5))
-#         self.assertTrue(result == receiver_test_input.setup_expt_outcome_test1)
+    def test_setup(self):
+        result = (receiver.setup(5))
+        index = 0
+        for item in result:
+            self.assertTrue(item == receiver_test_input.setup_expt_outcome_test1[index])
+            index += 1
 # test
 
 #     def test_pick_sample_from_console(self):
