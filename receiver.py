@@ -72,6 +72,6 @@ def output_to_console():
     
 
 setup(5)
-# pick_sample_from_console(data) 
+pick_sample_from_console(data) 
 
 
