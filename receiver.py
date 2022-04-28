@@ -1,8 +1,6 @@
 import ast
 import enum
 
-data = ""
-
 class Parameter(enum.IntEnum):
     Current = 0
     Temp = 1
@@ -77,7 +75,5 @@ def output_to_console():
 def get_parameter_wise_metadata():
     return parameter_wise_metadata
 
-setup(5)
-pick_sample_from_console(data) 
 
 
