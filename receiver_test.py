@@ -21,14 +21,14 @@ class receiver_test(unittest.TestCase):
             index += 1
             
     def test_process_sample(self):
-        setup(5)
-        process_sample(receiver_test_input.received_data1)
-        self.assertTrue(str(get_parameter_wise_metadata()) == str(output_test1))
+        receiver.setup(5)
+        receiver.process_sample(receiver_test_input.received_data1)
+        self.assertTrue(str(receiver.get_parameter_wise_metadata()) == str(receiver_test_input.output_test1))
         
-        setup(5)
+        receiver.setup(5)
         for item in receiver_test_input.received_data2:
-            process_sample(item)
-        print (get_parameter_wise_metadata())
-        self.assertTrue(str(get_parameter_wise_metadata()) == str(output_test2))
+            receiver.process_sample(item)
+        print (receiver.get_parameter_wise_metadata())
+        self.assertTrue(str(receiver.get_parameter_wise_metadata()) == str(receiver_test_input.output_test2))
 
 unittest.main(),
