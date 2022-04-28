@@ -29,7 +29,7 @@ def GenerateSamples(Samples_count: int, max_sample_value: int):
         sample = random.randint(0,defaultParams['max_bit_value'])
         Samples.append(sample)
     Samples = PreProcessSamplesFromA2D_12B(Samples, max_sample_value) 
-    print (Samples)
+#     print (Samples)
     return Samples
 
 def GenerateSamplesToReceiverFromA2D_12B(Samples_count):
@@ -38,9 +38,11 @@ def GenerateSamplesToReceiverFromA2D_12B(Samples_count):
     temp_samples = GenerateSamples(Samples_count, defaultParams['max_temp'])
     min_Samples = len(current_samples) if len(current_samples)< len(temp_samples) else len(temp_samples)
     for count in range (0, min_Samples):
-        samplesToReceiver.append({'Current': current_samples[count], 'Temp' : temp_samples[count]})
-    print(len(samplesToReceiver))
-    PrintSenderReadingsInConsole(samplesToReceiver)
+        dict_out = {'Current': current_samples[count], 'Temp' : temp_samples[count]}
+        sys.stdout.write(f"{dict_out}\n")
+        samplesToReceiver.append(dict_out)
+#     print(len(samplesToReceiver))
+#     PrintSenderReadingsInConsole(samplesToReceiver)
     return samplesToReceiver
 
 GenerateSamplesToReceiverFromA2D_12B(50)
