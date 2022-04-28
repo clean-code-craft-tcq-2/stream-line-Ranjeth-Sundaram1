@@ -73,7 +73,7 @@ def output_to_console():
     print (data_to_print)
     
 
-# setup(5)
+setup(5)
 # pick_sample_from_console(data) 
 
 
