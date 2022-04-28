@@ -19,10 +19,16 @@ class receiver_test(unittest.TestCase):
         for item in result:
             self.assertTrue(item == receiver_test_input.setup_expt_outcome_test1[index])
             index += 1
-# test
-
-#     def test_pick_sample_from_console(self):
-#         self.assertTrue(receiver.pick_sample_from_console([]) == "")
-#         self.assertTrue(receiver.pick_sample_from_console(["{'Current': 8, 'Temp': 39}"]) == "Current\t: Min = 8\tMax = 8\tAvg = None\nTemp\t: Min = 39\tMax = 39\tAvg = None\n")
+            
+    def test_process_sample(self):
+        setup(5)
+        process_sample(receiver_test_input.received_data1)
+        self.assertTrue(str(get_parameter_wise_metadata()) == str(output_test1))
+        
+        setup(5)
+        for item in receiver_test_input.received_data2:
+            process_sample(item)
+        print (get_parameter_wise_metadata())
+        self.assertTrue(str(get_parameter_wise_metadata()) == str(output_test2))
 
 unittest.main(),
