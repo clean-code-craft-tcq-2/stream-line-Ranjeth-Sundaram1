@@ -41,10 +41,10 @@ def GenerateSamplesToReceiverFromA2D_12B(Samples_count):
     for count in range (0, min_Samples):
         dict_out = {'Current': current_samples[count], 'Temp' : temp_samples[count]}
 #         sys.stdout.write(f"{dict_out}\n")
-        print (dict_out)
+#         print (dict_out)
         samplesToReceiver.append(dict_out)
 #     print(len(samplesToReceiver))
-#     PrintSenderReadingsInConsole(samplesToReceiver)
+    PrintSenderReadingsInConsole(samplesToReceiver)
     return samplesToReceiver
 
 GenerateSamplesToReceiverFromA2D_12B(50)
