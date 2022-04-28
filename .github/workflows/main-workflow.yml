@@ -34,7 +34,7 @@ jobs:
 
       - name: Run command redirection
         run: |
-          python StreamLine_sender.py | python receiver.py
+          python StreamLine_sender.py | python piped_receiver.py
           
           
       - name: Run and collect coverage receiver_test
