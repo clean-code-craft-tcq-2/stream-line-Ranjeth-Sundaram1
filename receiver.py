@@ -32,8 +32,9 @@ def setup(l_moving_window_size):
 def pick_sample_from_console():
     data_stream = []
     data_stream.append(sys.stdin.readline())
+    print (f" Data stream is {data_stream}")
     for sample in data_stream:        
-        process_sample(dictionary)
+        process_sample(sample)
 
         
 def update_extremes(meta_data, new_data_point):
