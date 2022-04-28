@@ -40,7 +40,8 @@ def GenerateSamplesToReceiverFromA2D_12B(Samples_count):
     min_Samples = len(current_samples) if len(current_samples)< len(temp_samples) else len(temp_samples)
     for count in range (0, min_Samples):
         dict_out = {'Current': current_samples[count], 'Temp' : temp_samples[count]}
-        sys.stdout.write(f"{dict_out}\n")
+#         sys.stdout.write(f"{dict_out}\n")
+        print (dict_out)
         samplesToReceiver.append(dict_out)
 #     print(len(samplesToReceiver))
 #     PrintSenderReadingsInConsole(samplesToReceiver)
