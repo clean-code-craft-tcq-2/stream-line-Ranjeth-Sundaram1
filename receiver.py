@@ -29,9 +29,10 @@ def setup(l_moving_window_size):
         parameter_wise_metadata[param]["moving_window"] = [None] * moving_window_size
     return parameter_wise_metadata
 
-def pick_sample_from_console(data_stream):
+def pick_sample_from_console():
+    data_stream = []
+    data_stream.append(sys.stdin.readline())
     for sample in data_stream:        
-        dictionary = ast.literal_eval(sample)
         process_sample(dictionary)
 
         
@@ -56,7 +57,8 @@ def update_moving_average(meta_data, new_data_point):
     return meta_data
     
         
-def process_sample(sample):
+def process_sample(sample_in_string):
+    sample = ast.literal_eval(sample_in_string)
     for param in range (Parameter.Parameter_Count ):
         update_extremes(parameter_wise_metadata[param], sample[(Parameter(param).name)])
         update_moving_average(parameter_wise_metadata[param], sample[(Parameter(param).name)])
