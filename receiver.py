@@ -32,7 +32,8 @@ def setup(l_moving_window_size):
 
 def pick_sample_from_console():
     data_stream = []
-    data_stream.append(sys.stdin.readline())
+    data_stream = [sys.stdin.readline() for i in range(10)]
+#     data_stream.append(sys.stdin.readline())
     print (f" Data stream is {data_stream}")
     for sample in data_stream:        
         process_sample(sample)
