@@ -14,6 +14,7 @@ moving_window_size = None
 whitelisted_metadata = {"minimum_value" : "Min" ,"maximum_value" : "Max","moving_avg" : "Avg"}
 
 def setup(l_moving_window_size):
+    global parameter_wise_metadata
     parameter_wise_metadata = []
     global moving_window_size 
     moving_window_size = l_moving_window_size
@@ -73,8 +74,10 @@ def output_to_console():
         data_to_print += "\n"
     print (data_to_print)
     
+def get_parameter_wise_metadata():
+    return parameter_wise_metadata
 
 setup(5)
-# pick_sample_from_console(data) 
+pick_sample_from_console(data) 
 
 
