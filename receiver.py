@@ -14,6 +14,7 @@ moving_window_size = None
 whitelisted_metadata = {"minimum_value" : "Min" ,"maximum_value" : "Max","moving_avg" : "Avg"}
 
 def setup(l_moving_window_size):
+    parameter_wise_metadata = []
     global moving_window_size 
     moving_window_size = l_moving_window_size
     
