@@ -79,5 +79,5 @@ def output_to_console():
 def get_parameter_wise_metadata():
     return parameter_wise_metadata
 
-
-
+setup(5)
+pick_sample_from_console()
